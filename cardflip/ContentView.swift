@@ -16,9 +16,12 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Retourne Carte")
+            Text(LocalizedStringKey(stringLiteral: "titleDescription"))
                 .font(.largeTitle)
-                .padding(.top,0)
+                .padding()
+            Text((image == nil) ? LocalizedStringKey(stringLiteral: "ruleOne") : LocalizedStringKey(stringLiteral: "ruleTwo"))
+                .font(.subheadline)
+            
             ZStack {
                 if showView {
                     image?
@@ -48,10 +51,15 @@ struct ContentView: View {
             }
             .frame(width:200, height: 300)
             
-        
             // ouvrir la lib de photo
-            Button("Open Photo Library") {
+            Button(LocalizedStringKey(stringLiteral: "buttonLibrary")) {
                 self.showLibrary.toggle()
+                // affiche la carte de dos
+                if !(image == nil) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.showView = false
+                    }
+                }
             }
             .buttonStyle(PlainButtonStyle())
             .frame(width: 200, height: 50)
