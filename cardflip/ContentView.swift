@@ -26,6 +26,7 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .transition(.reveseflip)
                         .onTapGesture {
+                            guard !(image == nil) else {return}
                             withAnimation(.bouncy(duration: 2)) {
                                 self.showView.toggle()
                             }
@@ -35,6 +36,8 @@ struct ContentView: View {
                         .resizable()
                         .transition(.flip)
                         .onTapGesture {
+                            //pour faire rotation il faut avoir choisit une image
+                            guard !(image == nil) else {return}
                             withAnimation(.bouncy(duration: 2)) {
                                 self.showView.toggle()
                             }
@@ -44,21 +47,7 @@ struct ContentView: View {
             }
             .frame(width:200, height: 300)
             
-            // pour faire rotation il faut avoir choisit une image
-//            if !(image == nil) {
-//                Button(showView ? "Hide" : "Reveal") {
-//                    withAnimation(.bouncy(duration: 2)) {
-//                        self.showView.toggle()
-//                    }
-//                }
-//                .buttonStyle(PlainButtonStyle())
-//                .frame(width: 200, height: 50)
-//                .foregroundColor(.white)
-//                .background(.green)
-//                .cornerRadius(10)
-//                .padding(.top, 30)
-//            }
-            
+        
             // ouvrir la lib de photo
             Button("Open Photo Library") {
                 self.showLibrary.toggle()
