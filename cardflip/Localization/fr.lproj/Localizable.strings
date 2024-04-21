@@ -14,4 +14,6 @@
 "rotationMaxLabel" = "Lente";
 "rotationSpeedLabel" = "Rotation";
 "directionOfRotation" = "Sens de rotation";
+"rightleft" = "Droite Gauche";
+"leftright" = "Gauche Droite";
 

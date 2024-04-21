@@ -30,7 +30,7 @@ struct ContentView: View {
                     image?
                         .resizable()
                         .cornerRadius(10)
-                        .transition(.reveseflip)
+                        .transition(directRotation ?.reveseflip: .flip)
                         .onTapGesture {
                             guard !(image == nil) else {return}
                             withAnimation(.bouncy(duration: speedDuration)) {
@@ -40,7 +40,7 @@ struct ContentView: View {
                 } else {
                     Image("dos")
                         .resizable()
-                        .transition(.flip)
+                        .transition(directRotation ?.flip :.reveseflip)
                         .opacity(!(image == nil) ? 1 : 0.1)
                         .onTapGesture {
                             //pour faire rotation il faut avoir choisit une image
@@ -86,8 +86,8 @@ struct ContentView: View {
                         .padding(.horizontal)
                     }
                     Section(LocalizedStringKey(stringLiteral: "directionOfRotation")) {
-                        
-                        
+                        Toggle(directRotation ? LocalizedStringKey(stringLiteral: "rightleft") : LocalizedStringKey(stringLiteral: "leftright")  ,
+                               isOn: $directRotation)
                     }
                     
                 }
