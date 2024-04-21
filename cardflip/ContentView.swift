@@ -35,6 +35,7 @@ struct ContentView: View {
                     Image("dos")
                         .resizable()
                         .transition(.flip)
+                        .opacity(!(image == nil) ? 1 : 0.1)
                         .onTapGesture {
                             //pour faire rotation il faut avoir choisit une image
                             guard !(image == nil) else {return}
