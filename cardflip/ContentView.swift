@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var inputImage:UIImage?
     @State private var showView:Bool = false
     @State private var showLibrary:Bool = false
+    @State private var speedDuration:Double = 2.0
     
     var body: some View {
         VStack {
@@ -42,7 +43,7 @@ struct ContentView: View {
                         .onTapGesture {
                             //pour faire rotation il faut avoir choisit une image
                             guard !(image == nil) else {return}
-                            withAnimation(.bouncy(duration: 2)) {
+                            withAnimation(.bouncy(duration: speedDuration)) {
                                 self.showView.toggle()
                             }
                         }
@@ -67,6 +68,18 @@ struct ContentView: View {
             .background(.blue)
             .cornerRadius(10)
             .padding()
+            Form {
+                Section(LocalizedStringKey(stringLiteral: "ruleOne")) {
+                    HStack {
+                        Text("titi")
+                    }
+                    
+                }
+                
+            }
+            
+            
+            
             
             // ouvrir fenetre sheet
             .sheet(isPresented: $showLibrary) {
