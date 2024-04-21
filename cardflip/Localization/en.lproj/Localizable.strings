@@ -10,3 +10,12 @@
 "buttonLibrary" = "Open the photo library";
 "ruleOne" = "choise a photo";
 "ruleTwo" = "Touch te card";
+"rotationSpeed" = "SPEED ROTATION";
+"rotationMinLabel" = "Speed";
+"rotationMaxLabel" = "Slow";
+"rotationSpeedLabel" = "Rotation";
+"directionOfRotation" = "Direction of rotation";
+
+
+
+

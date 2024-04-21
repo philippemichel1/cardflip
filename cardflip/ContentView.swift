@@ -14,6 +14,8 @@ struct ContentView: View {
     @State private var showView:Bool = false
     @State private var showLibrary:Bool = false
     @State private var speedDuration:Double = 2.0
+    @State private var directRotation:Bool = true
+    
     
     var body: some View {
         VStack {
@@ -31,7 +33,7 @@ struct ContentView: View {
                         .transition(.reveseflip)
                         .onTapGesture {
                             guard !(image == nil) else {return}
-                            withAnimation(.bouncy(duration: 2)) {
+                            withAnimation(.bouncy(duration: speedDuration)) {
                                 self.showView.toggle()
                             }
                         }
@@ -69,9 +71,23 @@ struct ContentView: View {
             .cornerRadius(10)
             .padding()
             Form {
-                Section(LocalizedStringKey(stringLiteral: "ruleOne")) {
-                    HStack {
-                        Text("titi")
+                Section(LocalizedStringKey(stringLiteral: "rotationSpeed")) {
+                    VStack {
+                        Slider(value: $speedDuration, in: 1.0...5.0, step: 0.5) {
+                            Text(LocalizedStringKey(stringLiteral: "rotationSpeedLabel"))
+                        } minimumValueLabel: {
+                            Text(LocalizedStringKey(stringLiteral: "rotationMinLabel"))
+                                .font(.headline)
+                            
+                        } maximumValueLabel: {
+                            Text(LocalizedStringKey(stringLiteral: "rotationMaxLabel"))
+                                .font(.headline)
+                        }
+                        .padding(.horizontal)
+                    }
+                    Section(LocalizedStringKey(stringLiteral: "directionOfRotation")) {
+                        
+                        
                     }
                     
                 }

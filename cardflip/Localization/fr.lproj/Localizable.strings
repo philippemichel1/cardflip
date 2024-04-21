@@ -9,4 +9,9 @@
 "buttonLibrary" = "Ouvrir la librairie photo";
 "ruleOne" = "Choisissez une photo";
 "ruleTwo" = "Touchez la carte";
+"rotationSpeed" = "VITESSE DE ROTATION";
+"rotationMinLabel" = "Rapide";
+"rotationMaxLabel" = "Lente";
+"rotationSpeedLabel" = "Rotation";
+"directionOfRotation" = "Sens de rotation";
 
