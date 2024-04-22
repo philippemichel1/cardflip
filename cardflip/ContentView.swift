@@ -66,6 +66,7 @@ struct ContentView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(height: 50)
             .foregroundColor(.white)
+            .padding(.horizontal)
             .background(.blue)
             .cornerRadius(10)
             .padding()
