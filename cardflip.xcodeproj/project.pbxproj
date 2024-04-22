@@ -40,6 +40,7 @@
 		3744D49B2BD447C2009F1CB5 /* Viiew */ = {
 			isa = PBXGroup;
 			children = (
+				3771BC6A2BD432370032668A /* ContentView.swift */,
 			);
 			path = Viiew;
 			sourceTree = "<group>";
@@ -75,7 +76,6 @@
 				3744D49C2BD447FA009F1CB5 /* ViewModel */,
 				3744D49B2BD447C2009F1CB5 /* Viiew */,
 				3771BC682BD432370032668A /* cardflipApp.swift */,
-				3771BC6A2BD432370032668A /* ContentView.swift */,
 				3771BC6C2BD432390032668A /* Assets.xcassets */,
 				3771BC6E2BD432390032668A /* Preview Content */,
 			);
