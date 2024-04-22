@@ -50,7 +50,6 @@ struct ContentView: View {
                             }
                         }
                 }
-                
             }
             .frame(width:200, height: 300)
             
@@ -85,17 +84,15 @@ struct ContentView: View {
                         }
                         .padding(.horizontal)
                     }
+                }
                     Section(LocalizedStringKey(stringLiteral: "directionOfRotation")) {
                         Toggle(directRotation ? LocalizedStringKey(stringLiteral: "rightleft") : LocalizedStringKey(stringLiteral: "leftright")  ,
                                isOn: $directRotation)
+                        .tint(.accentColor)
                     }
                     
                 }
                 
-            }
-            
-            
-            
             
             // ouvrir fenetre sheet
             .sheet(isPresented: $showLibrary) {
@@ -114,7 +111,7 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-
+// code fournit le site Kavas
 struct FlipTransition:ViewModifier, Animatable {
     var progress:CGFloat = 0
     var animatableData: CGFloat {
