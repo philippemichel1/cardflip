@@ -112,7 +112,11 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-// code fournit le site Kavas
+
+
+// Transition
+// code chaine youtube Kavsoft
+//
 struct FlipTransition:ViewModifier, Animatable {
     var progress:CGFloat = 0
     var animatableData: CGFloat {
@@ -137,5 +141,6 @@ extension AnyTransition {
     static let reveseflip: AnyTransition = .modifier(
         active: FlipTransition(progress: 1),
         identity: FlipTransition())
-    
+
 }
+//-------------------------------------------------------//
